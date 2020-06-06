@@ -93,4 +93,9 @@ $(document).ready(function(){
         }
     });
 
+    $("input[type=file]").on("change", function() {
+        $("[for=file]").html(this.files[0].name);
+        $("#preview").attr("src", URL.createObjectURL(this.files[0]));
+      })
+
   });
